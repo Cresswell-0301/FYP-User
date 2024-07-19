@@ -17,7 +17,7 @@ const Img = styled.img`
 `;
 
 const WhiteBox = styled(Link)`
-  background-color: #ffF;
+  background-color: #fff;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -32,36 +32,35 @@ const WhiteBox = styled(Link)`
   border: 0.5px solid #ced4da;
   box-shadow: -5px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-  &:hover{
-    &::before{
+  &:hover {
+    &::before {
       content: "";
       position: absolute;
-      inset :0;
-      z-index:1;
+      inset: 0;
+      z-index: 1;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
     }
-    ${Img}{
+    ${Img} {
       transition: transform 0.8s ease; /* Add transition for transform */
       transform: scale(1.15);
     }
-    
   }
 `;
 
 const Title = styled.span`
   color: gray;
-  text-decoration:none;
+  text-decoration: none;
   /* margin-top: 20px; */
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* opacity: 0; 初始时设置为透明 */
   /* transition: opacity 0.8s ease;  */
-  
+
   font-weight: bold;
-  font-size:1.30rem;
+  font-size: 1.3rem;
   // font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-family: "San Francisco", Helvetica, Arial, san-serif;
 
   ${WhiteBox}:hover & {
     /* margin-top: 20px; */
@@ -84,7 +83,7 @@ const PriceRow = styled.div`
     gap: 5px;
   }
   align-items: center;
-  margin-top:2px;
+  margin-top: 2px;
   padding-top: 3px;
 `;
 
@@ -92,12 +91,12 @@ const Price = styled.div`
   height: 30px;
   width: 100%;
   font-size: 22px;
-  font-weight:600;
+  font-weight: 600;
   text-align: center;
   color: #000;
   @media screen and (min-width: 768px) {
     font-size: 22px;
-    font-weight:600;
+    font-weight: 600;
     text-align: center;
   }
   /* visibility: hidden; */
@@ -107,7 +106,7 @@ const Price = styled.div`
   // }
 
   opacity: 0; // 初始时设置为透明
-  transition: opacity 0.8s ease; 
+  transition: opacity 0.8s ease;
 
   ${WhiteBox}:hover & {
     opacity: 1;
@@ -115,22 +114,19 @@ const Price = styled.div`
   }
 `;
 
-export default function ProductBox({_id,title,description,price,images}) {
-  const url = '/product/'+_id;
+export default function ProductBox({ _id, title, description, price, images }) {
+  const url = "/product/" + _id;
   return (
     <ProductWrapper>
       <WhiteBox href={url}>
-        <Img src={images?.[0]} alt=""/>
+        <Img src={images?.[0]} alt="" />
         <ProductInfoBox>
-        <Title href={url}>{title}</Title>
-        <PriceRow>
-          <Price>
-            ${price}
-          </Price>
-        </PriceRow>
-      </ProductInfoBox>
+          <Title href={url}>{title}</Title>
+          <PriceRow>
+            <Price>RM {price}</Price>
+          </PriceRow>
+        </ProductInfoBox>
       </WhiteBox>
-      
     </ProductWrapper>
   );
 }

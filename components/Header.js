@@ -305,7 +305,7 @@ const ResultCon = styled.div`
   flex-direction: column;
   height: 100%;
   overflow-x: hidden;
-  
+
   scrollbar-width: thin; /* Set the width of the scrollbar */
   scrollbar-color: gray #fff; /* Set the color of the scrollbar thumb and track */
 `;
@@ -579,7 +579,7 @@ export default function Header({ allProducts, fetchedCategory }) {
             <DropDisplay>
               <DropBar>
                 <DropBtn onClick={() => router.push("/products")}>
-                  <DropA href="/products">All products</DropA>
+                  <DropA href="/products">All PRODUCTS</DropA>
                 </DropBtn>
                 {parents.map((p) => (
                   <DropBtn
