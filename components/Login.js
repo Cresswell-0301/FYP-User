@@ -94,7 +94,6 @@ const Span2 = styled.span`
   }
 `;
 
-
 const SharedSpan = styled(Link)`
   width: fit-content;
   height: 18px;
@@ -288,8 +287,7 @@ export default function Login() {
         />
         <MiniCon>
           <ColCon>
-
-          <SharedSpan href={"fcpassword"}>Forgot Password</SharedSpan>      
+            <SharedSpan href={"fcpassword"}>Forgot Password</SharedSpan>
 
             <Span>
               New User?{" "}
